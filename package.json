@@ -21,7 +21,8 @@
   "homepage": "https://github.com/jijojames18/vue3-boilerplate#readme",
   "dependencies": {
     "pinia": "^2.0.11",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.2",
