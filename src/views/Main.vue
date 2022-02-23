@@ -11,5 +11,12 @@
 </script>
 
 <template>
-    <div>{{ JSON.stringify(store.items)  }}</div>
+    <div class="bg-[#f30] local-class">{{ JSON.stringify(store.items)  }}</div>
 </template>
+
+<style>
+.local-class {
+    font-weight: bold;
+}
+
+</style>
