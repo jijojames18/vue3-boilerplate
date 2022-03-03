@@ -1,41 +1,28 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "esnext",
-        "strict": true,
-        "jsx": "preserve",
-        "importHelpers": true,
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "sourceMap": true,
-        "baseUrl": ".",
-        "typeRoots": ["node_modules/@types"],
-        "types": [
-            "node",
-            "./types",
-            "jest"
-        ],
-        "paths": {
-            "@/*": [
-                "src/*"
-            ],
-            "tslib": ["node_modules/tslib/tslib.d.ts"]
-        },
-        "lib": [
-            "es2015",
-            "dom",
-            "dom.iterable",
-            "scripthost"
-        ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "./types", "jest"],
+    "paths": {
+      "@/*": ["src/*"],
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "tests/**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "lib": ["es2015", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
 }

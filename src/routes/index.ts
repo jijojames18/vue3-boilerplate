@@ -1,19 +1,25 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import MainView from "@/views/Main.vue";
-import GraphQLView from "@/views/GraphQL.vue";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import MainView from '@/views/Main.vue';
+import GraphQLView from '@/views/GraphQL.vue';
+import ChatView from '@/views/ChatView.vue';
+import ChatView2 from '@/views/ChatView2.vue';
 
-const routes : Array<RouteRecordRaw > = [
-  { path: "/", component: MainView },
+const routes: Array<RouteRecordRaw> = [
+  { path: '/', component: MainView },
   {
-    path: "/graphQL/:id",
-    component: GraphQLView,
+    path: '/graphQL/:id',
+    component: GraphQLView
   },
+  {
+    path: '/chatView',
+    component: ChatView
+  }
   //{ path: "/:allParams(.*)*", name: "NotFound", component: NotFound }, All data avaialable in allParams
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 
 //Guards

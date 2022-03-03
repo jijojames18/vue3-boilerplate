@@ -1,11 +1,12 @@
-import { defineStore } from "pinia";
-import {ItemDefinition, ItemsDefinition} from "@/types/items"
-export const itemStore = defineStore("items", {
-  state: () => ({
-    items: [],
-  } as ItemsDefinition),
+import { defineStore } from 'pinia';
+import { ItemDefinition, ItemsDefinition } from '@/types/items';
+export const itemStore = defineStore('items', {
+  state: () =>
+    ({
+      items: []
+    } as ItemsDefinition),
   getters: {
-    getItems: (state) => state.items,
+    getItems: (state) => state.items
   },
   actions: {
     addItem(item: ItemDefinition) {
@@ -18,6 +19,6 @@ export const itemStore = defineStore("items", {
     removeItem(itemId: string) {
       this.items = this.items.filter((item) => item.id !== itemId);
       return this.items;
-    },
-  },
+    }
+  }
 });

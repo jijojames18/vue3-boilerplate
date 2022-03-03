@@ -1,8 +1,8 @@
 export declare interface ItemDefinition {
-    id: string,
-    name?: string
+  id: string;
+  name?: string;
 }
 
 export declare interface ItemsDefinition {
-    items: ItemDefinition[]
+  items: ItemDefinition[];
 }
