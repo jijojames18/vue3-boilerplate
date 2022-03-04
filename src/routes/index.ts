@@ -1,14 +1,13 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import MainView from '@/views/Main.vue';
-import GraphQLView from '@/views/GraphQL.vue';
+import DBView from '@/views/DB.vue';
 import ChatView from '@/views/ChatView.vue';
-import ChatView2 from '@/views/ChatView2.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', component: MainView },
   {
-    path: '/graphQL/:id',
-    component: GraphQLView
+    path: '/db/:id',
+    component: DBView
   },
   {
     path: '/chatView',
@@ -27,7 +26,7 @@ router.beforeEach((to, from) => {
   console.log(to, from);
   // ...
   // explicitly return false to cancel the navigation
-  //return false;
+  // return false;
 });
 
 export default router;

@@ -1,7 +1,7 @@
 <template>
-    <div class="login-view">
-        <input v-model="userName" @change="updateUserName" />
-    </div>
+  <div class="login-view">
+    <input v-model="userName" @change="updateUserName" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -13,13 +13,11 @@ const store = chatStore();
 
 let { credentials } = storeToRefs(store);
 
-let userName = ref('')
+let userName = ref('');
 
 const updateUserName = (val: Event): void => {
-    credentials.value.username = userName.value;
-}
-
+  credentials.value.username = userName.value;
+};
 </script>
 
-<style>
-</style>
+<style></style>
