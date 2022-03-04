@@ -1,34 +1,28 @@
 <template>
   <div class="chat-view">
     <span>{{ credentials.username }}</span>
-    <Input @inputChanged="inputChanged" />
-    <Button @buttonClicked="sendMessage" :buttonText="'Send'"></Button>
-    <div class="message-list">
-      <ul>
-        <li v-for="{ author, id, message } in messages" :key="id.toString()">
-          {{ author }} {{ id }} {{ message }}
-        </li>
-      </ul>
-    </div>
-    <Login></Login>
-    <Spinner></Spinner>
+    <v-input @inputChanged="inputChanged" />
+    <v-button @buttonClicked="sendMessage" :buttonText="'Send'"></v-button>
+    <v-login></v-login>
+    <message-list></message-list>
+    <div>{{ welcomeMessage }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref, watch, inject } from 'vue';
 import { chatStore } from '@/store/chat';
 import { storeToRefs } from 'pinia';
-import Login from './Login.vue';
-import Button from '@/components/Button.vue';
-import Input from '@/components/Input.vue';
-import Spinner from '@/components/Spinner.vue';
+import VLogin from './VLogin.vue';
+import VButton from '@/components/VButton.vue';
+import VInput from '@/components/VInput.vue';
+import MessageList from './MessageList.vue';
 
 const store = chatStore();
 
 let { messages, credentials } = storeToRefs(store);
 
-let userName = credentials.value.username;
+let welcomeMessage = computed((): string => `Hi ${credentials.value.username}`);
 
 let newMessage = ref('');
 
@@ -38,13 +32,18 @@ const sendMessage = (): void => {
     id: Math.random(),
     message: newMessage.value
   });
-
-  newMessage.value = '';
 };
 
-const inputChanged = (event: Event): void => {
+const inputChanged = (event: { target: HTMLInputElement }): void => {
   newMessage.value = event.target.value;
 };
+
+watch(newMessage, (): void => {
+  console.log('watch: newMessage changed');
+});
+
+const version = inject('version');
+console.log(version);
 </script>
 
 <style></style>

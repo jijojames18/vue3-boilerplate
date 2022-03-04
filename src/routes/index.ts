@@ -1,13 +1,13 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import MainView from '@/views/Main.vue';
-import DBView from '@/views/DB.vue';
+import RouteTest from '@/views/RouteTest.vue';
 import ChatView from '@/views/ChatView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', component: MainView },
   {
     path: '/db/:id',
-    component: DBView
+    component: RouteTest
   },
   {
     path: '/chatView',
