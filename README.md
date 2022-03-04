@@ -47,7 +47,7 @@ VUE_APP_FIREBASE_CONFIG | Firebase JSON config |
 * Bootstrap a vue project by using [Vite](https://github.com/vitejs/vite).
 * Install additional dependencies  
 ``
-npm install firebase pinia vue-router
+npm install firebase pinia vue-router  
 npm install @babel/preset-env @pinia/testing @types/jest @types/node @vitejs/plugin-vue @vue/test-utils @vue/vue3-jest autoprefixer babel-core babel-jest jest postcss postcss-import serve tailwindcss ts-jest ts-node tslib vite vue-tsc --save
 ``
 * Copy the files in this project to the folder containing the new app code
